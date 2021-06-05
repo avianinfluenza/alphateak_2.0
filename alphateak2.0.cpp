@@ -40,10 +40,12 @@ int tree(void){
 	s = im -1;
 	for(i = 1; i <= 120; i++){
 		if(score[i] >= s){
+			printf("s[%d] : %d ", i, score[i]);
 			temp = i;
 			s = score[i];
 		}
 	}
+	printf("\n");
 	return temp;
 }
 
@@ -910,7 +912,7 @@ void re(){ //다시하기 입력받는 함수
 }
 
 void input(){	// 플레이
-	system("mode con cols=45 lines=17"); // 크기 조절 
+	system("mode con cols=200 lines=30"); // 크기 조절 
     system("cls");
 	int k=0,t=1,cnt1=0,x,y, temp;
 	puts("0 1 2 3 4 5 6 7 8 9 A B C D E F");
@@ -1042,6 +1044,7 @@ void input(){	// 플레이
 		board[0][x+dx[temp]][y+dy[temp]] = 2;
 		score[0] = sc(0);
 		cnt++;
+		printf("temp : %d\n", temp);
 		for(int i=0;i<16;i++){
 			for(int j=0;j<16;j++){
 				if(i==0){           //가로줄 번호 출력
