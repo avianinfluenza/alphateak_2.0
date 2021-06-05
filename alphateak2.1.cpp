@@ -2,7 +2,7 @@
 #include<windows.h> 
 #include<conio.h>
 
-// Å°º¸µå °ª 
+// í‚¤ë³´ë“œ ê°’ 
 #define UP 0
 #define DOWN 1
 #define LEFT 2
@@ -47,10 +47,10 @@ int tree(void){
 	return temp;
 }
 
-// Æò°¡ ÇÔ¼ö °í·ÁÇØ¾ßÇÒ °Í : µ¹ °³¼ö, ÃÖ±Ù¿¡ µĞ µ¹ ±ÙÃ³¿¡ ÀÖ´Â µ¹ ¼ö 
-int sc(int index){		//Æò°¡ÇÔ¼ö ÇÃ·¹ÀÌ¾î(1) ¿¡°Ô À¯¸®ÇÒ¶§´Â À½¼ö, AI(2)¿¡°Ô À¯¸®ÇÒ¶§´Â ¾ç¼ö 
+// í‰ê°€ í•¨ìˆ˜ ê³ ë ¤í•´ì•¼í•  ê²ƒ : ëŒ ê°œìˆ˜, ìµœê·¼ì— ë‘” ëŒ ê·¼ì²˜ì— ìˆëŠ” ëŒ ìˆ˜ 
+int sc(int index){		//í‰ê°€í•¨ìˆ˜ í”Œë ˆì´ì–´(1) ì—ê²Œ ìœ ë¦¬í• ë•ŒëŠ” ìŒìˆ˜, AI(2)ì—ê²Œ ìœ ë¦¬í• ë•ŒëŠ” ì–‘ìˆ˜ 
 	int i, j, s = 0,temp, tf; 
-	for(i = 1; i <= 15; i++){	//AI±âÁØ °¡·Î ¼¼·Î ¿¬°áµÈ µ¹ °í·Á 
+	for(i = 1; i <= 15; i++){	//AIê¸°ì¤€ ê°€ë¡œ ì„¸ë¡œ ì—°ê²°ëœ ëŒ ê³ ë ¤ 
 		temp = 0; tf = 0;
 		for(j = 1; j <= 15; j++){
 			if(board[index][i][j] == 2){
@@ -90,7 +90,7 @@ int sc(int index){		//Æò°¡ÇÔ¼ö ÇÃ·¹ÀÌ¾î(1) ¿¡°Ô À¯¸®ÇÒ¶§´Â À½¼ö, AI(2)¿¡°Ô À¯¸®Ç
 			tf = 0;
 		}
 	}
-	for(i = 1; i <= 15; i++){	//ÇÃ·¹ÀÌ¾î±âÁØ °¡·Î ¼¼·Î ¿¬°áµÈ µ¹ °í·Á, ÇÃ·¹ÀÌ¾î´Â ÀÎ°øÁö´Éº¸´Ù °¡ÁßÄ¡ 2 ¹è  
+	for(i = 1; i <= 15; i++){	//í”Œë ˆì´ì–´ê¸°ì¤€ ê°€ë¡œ ì„¸ë¡œ ì—°ê²°ëœ ëŒ ê³ ë ¤, í”Œë ˆì´ì–´ëŠ” ì¸ê³µì§€ëŠ¥ë³´ë‹¤ ê°€ì¤‘ì¹˜ 2 ë°°  
 		temp = 0; tf = 0;
 		for(j = 1; j <= 15; j++){
 			if(board[index][i][j] == 1){
@@ -150,7 +150,7 @@ int sc(int index){		//Æò°¡ÇÔ¼ö ÇÃ·¹ÀÌ¾î(1) ¿¡°Ô À¯¸®ÇÒ¶§´Â À½¼ö, AI(2)¿¡°Ô À¯¸®Ç
 			tf = 0;
 		}
 	}
-	for(i = 1; i <= 15; i++){	//AI±âÁØ ´ë°¢¼± °í·Á(Á¶¼± ¾Æ´Ô) 
+	for(i = 1; i <= 15; i++){	//AIê¸°ì¤€ ëŒ€ê°ì„  ê³ ë ¤(ì¡°ì„  ì•„ë‹˜) 
 		temp = 0; tf = 0;
 		for(j = 1; j <= i; j++){
 			if(board[index][16-j][i+1-j] == 2){
@@ -180,7 +180,7 @@ int sc(int index){		//Æò°¡ÇÔ¼ö ÇÃ·¹ÀÌ¾î(1) ¿¡°Ô À¯¸®ÇÒ¶§´Â À½¼ö, AI(2)¿¡°Ô À¯¸®Ç
 			}
 		}		
 	}	
-	for(i = 1; i <= 15; i++){	//AI±âÁØ ´ë°¢¼± °í·Á(Á¶¼± ¾Æ´Ô) 
+	for(i = 1; i <= 15; i++){	//AIê¸°ì¤€ ëŒ€ê°ì„  ê³ ë ¤(ì¡°ì„  ì•„ë‹˜) 
 		temp = 0; tf = 0;
 		for(j = 1; j <= i; j++){
 			if(board[index][16-j][15-i+j] == 2){
@@ -220,7 +220,7 @@ int sc(int index){		//Æò°¡ÇÔ¼ö ÇÃ·¹ÀÌ¾î(1) ¿¡°Ô À¯¸®ÇÒ¶§´Â À½¼ö, AI(2)¿¡°Ô À¯¸®Ç
 			tf = 0;
 		}		
 	}
-	for(i = 1; i <= 15; i++){	//player±âÁØ ´ë°¢¼± °í·Á(Á¶¼± ¾Æ´Ô) 
+	for(i = 1; i <= 15; i++){	//playerê¸°ì¤€ ëŒ€ê°ì„  ê³ ë ¤(ì¡°ì„  ì•„ë‹˜) 
 		temp = 0; tf = 0;
 		for(j = 1; j <= i; j++){
 			if(board[index][16-j][i+1-j] == 1){
@@ -280,7 +280,7 @@ int sc(int index){		//Æò°¡ÇÔ¼ö ÇÃ·¹ÀÌ¾î(1) ¿¡°Ô À¯¸®ÇÒ¶§´Â À½¼ö, AI(2)¿¡°Ô À¯¸®Ç
 			tf = 0;
 		}		
 	}	
-	for(i = 1; i <= 15; i++){	//player±âÁØ ´ë°¢¼± °í·Á(Á¶¼± ¾Æ´Ô)
+	for(i = 1; i <= 15; i++){	//playerê¸°ì¤€ ëŒ€ê°ì„  ê³ ë ¤(ì¡°ì„  ì•„ë‹˜)
 		temp = 0; tf = 0;
 		for(j = 1; j <= i; j++){
 			if(board[index][16-j][15-i+j] == 1){
@@ -347,10 +347,10 @@ int scme(int index){
 	int i, j, s = 0,temp, tf;
 	int x = board[index][0][0];
 	int y = board[index][0][1];
-	//Æò°¡ÇÔ¼ö ÇÃ·¹ÀÌ¾î(1) ¿¡°Ô À¯¸®ÇÒ¶§´Â À½¼ö, AI(2)¿¡°Ô À¯¸®ÇÒ¶§´Â ¾ç¼ö
-	////////////////////////////////////////ÇÃ·¹ÀÌ¾î ±âÁØ////////////////////////////////////////
+	//í‰ê°€í•¨ìˆ˜ í”Œë ˆì´ì–´(1) ì—ê²Œ ìœ ë¦¬í• ë•ŒëŠ” ìŒìˆ˜, AI(2)ì—ê²Œ ìœ ë¦¬í• ë•ŒëŠ” ì–‘ìˆ˜
+	////////////////////////////////////////í”Œë ˆì´ì–´ ê¸°ì¤€////////////////////////////////////////
 	temp = 0; tf = 0;			
-	for(i = -4; i < 5; i++){	//ÇÃ·¹ÀÌ¾î(1) x+- 
+	for(i = -4; i < 5; i++){	//í”Œë ˆì´ì–´(1) x+- 
 		if(x+i < 1 || x+i > 15){
 			continue;	
 		}
@@ -362,11 +362,13 @@ int scme(int index){
 			tf = 0;
 			temp = 0;
 			s -= AI[temp]*2;
-			if(x+i-temp-1 >= 1 && board[index][x+i-temp-1][y] == 2){
-				s += AI[temp]*3;
-			}
-			if(board[index][x+i][y] == 2){
-				s += AI[temp]*3;
+			if(temp >= 3){
+				if(x+i-temp-1 >= 1 && board[index][x+i-temp-1][y] == 2){
+					s += AI[temp]*3;
+				}
+				if(board[index][x+i][y] == 2){
+					s += AI[temp]*3;
+				}
 			}
 		}
 	}
@@ -374,16 +376,18 @@ int scme(int index){
 		tf = 0;
 		temp = 0;
 		s -= AI[temp]*2;
-		if(x+i-temp-1 >= 1 && board[index][x+i-temp-1][y] == 2){
-			s += AI[temp]*3;
-		}
-		if(x+i <= 15 && board[index][x+i][y] == 2){
-			s += AI[temp]*3;
+		if(temp >= 3){
+			if(x+i-temp-1 >= 1 && board[index][x+i-temp-1][y] == 2){
+				s += AI[temp]*3;
+			}
+			if(x+i <= 15 && board[index][x+i][y] == 2){
+				s += AI[temp]*3;
+			}
 		}
 	}
 	
 	temp = 0; tf = 0;
-	for(i = -4; i < 5; i++){	//ÇÃ·¹ÀÌ¾î(1) y+- 
+	for(i = -4; i < 5; i++){	//í”Œë ˆì´ì–´(1) y+- 
 		if(y+i < 1 || y+i > 15){
 			continue;	
 		}
@@ -395,28 +399,32 @@ int scme(int index){
 			tf = 0;
 			temp = 0;
 			s -= AI[temp]*2;
-			if(y+i-temp-1 >= 1 && board[index][x][y+i-temp-1] == 2){
-				s += AI[temp]*3;
-			}
-			if(board[index][x][y+i] == 2){
-				s += AI[temp]*3;
-			}
+			if(temp >= 3){
+				if(y+i-temp-1 >= 1 && board[index][x][y+i-temp-1] == 2){
+					s += AI[temp]*3;
+				}
+				if(board[index][x][y+i] == 2){
+					s += AI[temp]*3;
+				}
+			}	
 		}
 	}
 	if(tf == 1){
 		tf = 0;
 		temp = 0;
 		s -= AI[temp]*2;
-		if(y+i-temp-1 >= 1 && board[index][x][y+i-temp-1] == 2){
-			s += AI[temp]*3;
-		}
-		if(y+i <= 15 && board[index][x][y+i] == 2){
-			s += AI[temp]*3;
+		if(temp >= 3){
+			if(y+i-temp-1 >= 1 && board[index][x][y+i-temp-1] == 2){
+				s += AI[temp]*3;
+			}
+			if(y+i <= 15 && board[index][x][y+i] == 2){
+				s += AI[temp]*3;
+			}
 		}
 	}
 	
 	temp = 0; tf = 0;
-	for(i = -4; i < 5; i++){	//ÇÃ·¹ÀÌ¾î(1) x+- y+- 
+	for(i = -4; i < 5; i++){	//í”Œë ˆì´ì–´(1) x+- y+- 
 		if(y+i < 1 || y+i > 15 || x+i < 1 || x+i > 15){
 			continue;	
 		}
@@ -428,11 +436,13 @@ int scme(int index){
 			tf = 0;
 			temp = 0;
 			s -= AI[temp]*3;
-			if(y+i-temp-1 >= 1 && x+i-temp-1 >= 1 && board[index][x+i-temp-1][y+i-temp-1] == 2){
-				s += AI[temp]*4;
-			}
-			if(board[index][x+i][y+i] == 2){
-				s += AI[temp]*4;
+			if(temp >= 3){
+				if(y+i-temp-1 >= 1 && x+i-temp-1 >= 1 && board[index][x+i-temp-1][y+i-temp-1] == 2){
+					s += AI[temp]*4;
+				}
+				if(board[index][x+i][y+i] == 2){
+					s += AI[temp]*4;
+				}
 			}
 		}
 	}
@@ -440,16 +450,18 @@ int scme(int index){
 		tf = 0;
 		temp = 0;
 		s -= AI[temp]*3;
-		if(y+i-temp-1 >= 1 && x+i-temp-1 >= 1 && board[index][x+i-temp-1][y+i-temp-1] == 2){
-			s += AI[temp]*4;
-		}
-		if(y+i <= 15 && x+i <= 15 && board[index][x+i][y+i] == 2){
-			s += AI[temp]*4;
+		if(temp >= 3){
+			if(y+i-temp-1 >= 1 && x+i-temp-1 >= 1 && board[index][x+i-temp-1][y+i-temp-1] == 2){
+				s += AI[temp]*4;
+			}
+			if(y+i <= 15 && x+i <= 15 && board[index][x+i][y+i] == 2){
+				s += AI[temp]*4;
+			}
 		}
 	}
 	
 	temp = 0; tf = 0;
-	for(i = -4; i < 5; i++){	//ÇÃ·¹ÀÌ¾î(1) x+- y+- 
+	for(i = -4; i < 5; i++){	//í”Œë ˆì´ì–´(1) x+- y+- 
 		if(y+i < 1 || y+i > 15 || x-i < 1 || x-i > 15){
 			continue;	
 		}
@@ -461,11 +473,13 @@ int scme(int index){
 			tf = 0;
 			temp = 0;
 			s -= AI[temp]*3;
-			if(y+i-temp-1 >= 1 && x-i+temp+1 >= 1 && board[index][x-i+temp+1][y+i-temp-1] == 2){
-				s += AI[temp]*4;
-			}
-			if(board[index][x-i][y+i] == 2){
-				s += AI[temp]*4;
+			if(temp >= 3){
+				if(y+i-temp-1 >= 1 && x-i+temp+1 >= 1 && board[index][x-i+temp+1][y+i-temp-1] == 2){
+					s += AI[temp]*4;
+				}
+				if(board[index][x-i][y+i] == 2){
+					s += AI[temp]*4;
+				}
 			}
 		}
 	}
@@ -473,19 +487,21 @@ int scme(int index){
 		tf = 0;
 		temp = 0;
 		s -= AI[temp]*3;
-		if(y+i-temp-1 >= 1 && x-i+temp+1 >= 1 && board[index][x-i+temp+1][y+i-temp-1] == 2){
-			s += AI[temp]*4;
-		}
-		if(y+i <= 15 && x-i >= 1 && board[index][x-i][y+i] == 2){
-			s += AI[temp]*4;
+		if(temp >= 3){
+			if(y+i-temp-1 >= 1 && x-i+temp+1 >= 1 && board[index][x-i+temp+1][y+i-temp-1] == 2){
+				s += AI[temp]*4;
+			}
+			if(y+i <= 15 && x-i >= 1 && board[index][x-i][y+i] == 2){
+				s += AI[temp]*4;
+			}
 		}
 	}
-	////////////////////////////////////////ÇÃ·¹ÀÌ¾î ±âÁØ////////////////////////////////////////
+	////////////////////////////////////////í”Œë ˆì´ì–´ ê¸°ì¤€////////////////////////////////////////
 	
-	////////////////////////////////////////AI ±âÁØ////////////////////////////////////////
-	/*
+	////////////////////////////////////////AI ê¸°ì¤€////////////////////////////////////////
+	
 	temp = 0; tf = 0;			
-	for(i = -4; i < 5; i++){	//ÇÃ·¹ÀÌ¾î(1) x+- 
+	for(i = -4; i < 5; i++){	//í”Œë ˆì´ì–´(1) x+- 
 		if(x+i < 1 || x+i > 15){
 			continue;	
 		}
@@ -497,11 +513,13 @@ int scme(int index){
 			tf = 0;
 			temp = 0;
 			s += AI[temp];
-			if(x+i-temp-1 >= 1 && board[index][x+i-temp-1][y] == 1){
-				s -= AI[temp]*2;
-			}
-			if(board[index][x+i][y] == 1){
-				s -= AI[temp]*2;
+			if(temp >= 3){
+				if(x+i-temp-1 >= 1 && board[index][x+i-temp-1][y] == 1){
+					s -= AI[temp]*2;
+				}
+				if(board[index][x+i][y] == 1){
+					s -= AI[temp]*2;
+				}
 			}
 		}
 	}
@@ -509,16 +527,18 @@ int scme(int index){
 		tf = 0;
 		temp = 0;
 		s += AI[temp];
-		if(x+i-temp-1 >= 1 && board[index][x+i-temp-1][y] == 1){
-			s -= AI[temp]*2;
-		}
-		if(x+i <= 15 && board[index][x+i][y] == 1){
-			s -= AI[temp]*2;
-		}
+		if(temp >= 3){
+			if(x+i-temp-1 >= 1 && board[index][x+i-temp-1][y] == 1){
+				s -= AI[temp]*2;
+			}
+			if(x+i <= 15 && board[index][x+i][y] == 1){
+				s -= AI[temp]*2;
+			}
+		}	
 	}
 	
 	temp = 0; tf = 0;
-	for(i = -4; i < 5; i++){	//ÇÃ·¹ÀÌ¾î(1) y+- 
+	for(i = -4; i < 5; i++){	//í”Œë ˆì´ì–´(1) y+- 
 		if(y+i < 1 || y+i > 15){
 			continue;	
 		}
@@ -530,11 +550,13 @@ int scme(int index){
 			tf = 0;
 			temp = 0;
 			s += AI[temp];
-			if(y+i-temp-1 >= 1 && board[index][x][y+i-temp-1] == 1){
-				s -= AI[temp]*2;
-			}
-			if(board[index][x][y+i] == 2){
-				s -= AI[temp]*2;
+			if(temp >= 3){
+				if(y+i-temp-1 >= 1 && board[index][x][y+i-temp-1] == 1){
+					s -= AI[temp]*2;
+				}
+				if(board[index][x][y+i] == 2){
+					s -= AI[temp]*2;
+				}
 			}
 		}
 	}
@@ -542,16 +564,18 @@ int scme(int index){
 		tf = 0;
 		temp = 0;
 		s += AI[temp];
-		if(y+i-temp-1 >= 1 && board[index][x][y+i-temp-1] == 1){
-			s -= AI[temp]*2;
-		}
-		if(y+i <= 15 && board[index][x][y+i] == 1){
-			s -= AI[temp]*2;
+		if(temp >= 3){
+			if(y+i-temp-1 >= 1 && board[index][x][y+i-temp-1] == 1){
+				s -= AI[temp]*2;
+			}
+			if(y+i <= 15 && board[index][x][y+i] == 1){
+				s -= AI[temp]*2;
+			}
 		}
 	}
 	
 	temp = 0; tf = 0;
-	for(i = -4; i < 5; i++){	//ÇÃ·¹ÀÌ¾î(1) x+- y+- 
+	for(i = -4; i < 5; i++){	//í”Œë ˆì´ì–´(1) x+- y+- 
 		if(y+i < 1 || y+i > 15 || x+i < 1 || x+i > 15){
 			continue;	
 		}
@@ -563,11 +587,13 @@ int scme(int index){
 			tf = 0;
 			temp = 0;
 			s += AI[temp]*2;
-			if(y+i-temp-1 >= 1 && x+i-temp-1 >= 1 && board[index][x+i-temp-1][y+i-temp-1] == 1){
-				s -= AI[temp]*3;
-			}
-			if(board[index][x+i][y+i] == 1){
-				s -= AI[temp]*3;
+			if(temp >= 3){
+				if(y+i-temp-1 >= 1 && x+i-temp-1 >= 1 && board[index][x+i-temp-1][y+i-temp-1] == 1){
+					s -= AI[temp]*3;
+				}
+				if(board[index][x+i][y+i] == 1){
+					s -= AI[temp]*3;
+				}
 			}
 		}
 	}
@@ -575,16 +601,18 @@ int scme(int index){
 		tf = 0;
 		temp = 0;
 		s += AI[temp]*2;
-		if(y+i-temp-1 >= 1 && x+i-temp-1 >= 1 && board[index][x+i-temp-1][y+i-temp-1] == 1){
-			s -= AI[temp]*3;
-		}
-		if(y+i <= 15 && x+i <= 15 && board[index][x+i][y+i] == 1){
-			s -= AI[temp]*3;
+		if(temp >= 3){
+			if(y+i-temp-1 >= 1 && x+i-temp-1 >= 1 && board[index][x+i-temp-1][y+i-temp-1] == 1){
+				s -= AI[temp]*3;
+			}
+			if(y+i <= 15 && x+i <= 15 && board[index][x+i][y+i] == 1){
+				s -= AI[temp]*3;
+			}
 		}
 	}
 	
 	temp = 0; tf = 0;
-	for(i = -4; i < 5; i++){	//ÇÃ·¹ÀÌ¾î(1) x+- y+- 
+	for(i = -4; i < 5; i++){	//í”Œë ˆì´ì–´(1) x+- y+- 
 		if(y+i < 1 || y+i > 15 || x-i < 1 || x-i > 15){
 			continue;	
 		}
@@ -596,11 +624,13 @@ int scme(int index){
 			tf = 0;
 			temp = 0;
 			s += AI[temp]*2;
-			if(y+i-temp-1 >= 1 && x-i+temp+1 >= 1 && board[index][x-i+temp+1][y+i-temp-1] == 2){
-				s -= AI[temp]*3;
-			}
-			if(board[index][x-i][y+i] == 2){
-				s -= AI[temp]*3;
+			if(temp >= 3){
+				if(y+i-temp-1 >= 1 && x-i+temp+1 >= 1 && board[index][x-i+temp+1][y+i-temp-1] == 2){
+					s -= AI[temp]*3;
+				}
+				if(board[index][x-i][y+i] == 2){
+					s -= AI[temp]*3;
+				}
 			}
 		}
 	}
@@ -608,21 +638,23 @@ int scme(int index){
 		tf = 0;
 		temp = 0;
 		s += AI[temp]*2;
-		if(y+i-temp-1 >= 1 && x-i+temp+1 >= 1 && board[index][x-i+temp+1][y+i-temp-1] == 2){
-			s -= AI[temp]*3;
-		}
-		if(y+i <= 15 && x-i >= 1 && board[index][x-i][y+i] == 2){
-			s -= AI[temp]*3;
+		if(temp >= 3){
+			if(y+i-temp-1 >= 1 && x-i+temp+1 >= 1 && board[index][x-i+temp+1][y+i-temp-1] == 2){
+				s -= AI[temp]*3;
+			}
+			if(y+i <= 15 && x-i >= 1 && board[index][x-i][y+i] == 2){
+				s -= AI[temp]*3;
+			}
 		}
 	}
-	*/
-	////////////////////////////////////////AI ±âÁØ////////////////////////////////////////
+	
+	////////////////////////////////////////AI ê¸°ì¤€////////////////////////////////////////
 	
 	return s;
 }
 
 
-void copy(int a, int b){	//b º¸µå¿¡ aº¸µå¸¦ º¹»çÇÔ  
+void copy(int a, int b){	//b ë³´ë“œì— aë³´ë“œë¥¼ ë³µì‚¬í•¨  
 	int i, j;
 	for(i = 1; i <= 15; i++){
 		for(j = 1; j<= 15;j++){
@@ -631,21 +663,21 @@ void copy(int a, int b){	//b º¸µå¿¡ aº¸µå¸¦ º¹»çÇÔ
 	}
 }
 
-int key(){	//Å° ÀÔ·Â ÇÔ¼ö 
+int key(){	//í‚¤ ì…ë ¥ í•¨ìˆ˜ 
 	int key;
 	key=getch();
-	if(key==72) return UP; // ¹æÇâÅ° À§ 
-	else if(key==80) return DOWN; // ¹æÇâÅ° ¾Æ·¡ 
-	else if(key==13) return ENTER; // ¿£ÅÍÅ° 
+	if(key==72) return UP; // ë°©í–¥í‚¤ ìœ„ 
+	else if(key==80) return DOWN; // ë°©í–¥í‚¤ ì•„ë˜ 
+	else if(key==13) return ENTER; // ì—”í„°í‚¤ 
 } 
-void xy(int x, int y){	// x,y ÁÂÇ¥¼³Á¤ 
+void xy(int x, int y){	// x,y ì¢Œí‘œì„¤ì • 
 	HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD pos;
 	pos.X = x;
 	pos.Y = y;
 	SetConsoleCursorPosition(consoleHandle, pos);
 }
-void init(){  //Å©±â¹× Ä¿¼­ ¼û±â´Â ¼³Á¤ 
+void init(){  //í¬ê¸°ë° ì»¤ì„œ ìˆ¨ê¸°ëŠ” ì„¤ì • 
 	system("title OMOK BOT");
 	system("mode con cols=53 lines=15"); 
 	HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -654,7 +686,7 @@ void init(){  //Å©±â¹× Ä¿¼­ ¼û±â´Â ¼³Á¤
 	ConsoleCursor.dwSize = 1;
 	SetConsoleCursorInfo(consoleHandle,&ConsoleCursor);
 }
-void titleDraw(){ //Å¸ÀÌÆ²
+void titleDraw(){ //íƒ€ì´í‹€
 	puts("           #####   #     #   #####   #    # ");
  	puts("          #     #  ##   ##  #     #  #   #  ");
 	puts("          #     #  # # # #  #     #  #  #   ");
@@ -664,13 +696,13 @@ void titleDraw(){ //Å¸ÀÌÆ²
 	puts("           #####   #     #   #####   #    # ");
 
 }
-int menuDraw(){	// ¼±ÅÃ 
+int menuDraw(){	// ì„ íƒ 
 	int x=23;
 	int y=10;
 	xy(x-2,y);
-	printf("> °ÔÀÓ½ÃÀÛ");
+	printf("> ê²Œì„ì‹œì‘");
 	xy(x,y+2);
-	printf("  Á¾·á ");
+	printf("  ì¢…ë£Œ ");
 	while(1){
 		int n=key();
 		switch(n){
@@ -702,7 +734,7 @@ int menuDraw(){	// ¼±ÅÃ
 	}
 }
 
-void re(){ //´Ù½ÃÇÏ±â ÀÔ·Â¹Ş´Â ÇÔ¼ö
+void re(){ //ë‹¤ì‹œí•˜ê¸° ì…ë ¥ë°›ëŠ” í•¨ìˆ˜
 	char a;
 	while(1){
 	cin >> a;
@@ -735,12 +767,12 @@ void re(){ //´Ù½ÃÇÏ±â ÀÔ·Â¹Ş´Â ÇÔ¼ö
 	else if(a=='N'||a=='n'){
 		exit(0);
 	}
-	else cout << "Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä: ";
+	else cout << "ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”: ";
 	}
 }
 
-void input(){	// ÇÃ·¹ÀÌ
-	system("mode con cols=45 lines=17"); // Å©±â Á¶Àı 
+void input(){	// í”Œë ˆì´
+	system("mode con cols=45 lines=17"); // í¬ê¸° ì¡°ì ˆ 
     system("cls");
 	int k=0,t=1,cnt1=0,x,y, temp;
 	puts("0 1 2 3 4 5 6 7 8 9 A B C D E F");
@@ -760,27 +792,27 @@ void input(){	// ÇÃ·¹ÀÌ
 	puts("E - - - - - - - - - - - - - - -");
 	puts("F - - - - - - - - - - - - - - -");
 	while(1){
-		if(cnt%2!=0) cout << "Player 1ÀÇ Âø¼öÀ§Ä¡¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ";
+		if(cnt%2!=0) cout << "Player 1ì˜ ì°©ìˆ˜ìœ„ì¹˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ";
 		while(1){
 			cin >> x >> y;
-			if(x<0||x>15||y<0||y>15||board[0][x][y]!=0) cout << "Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä: ";
+			if(x<0||x>15||y<0||y>15||board[0][x][y]!=0) cout << "ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”: ";
 			else break;
 		}
 		if(cnt%2!=0){
 			temp = -1;
-			board[0][x][y]=1; //player1 Âø¼ö, board[0]Àº ·çÆ®³ëµå
+			board[0][x][y]=1; //player1 ì°©ìˆ˜, board[0]ì€ ë£¨íŠ¸ë…¸ë“œ
 			board[0][0][0] = x;
 			board[0][0][1] = y;
 			score[0] = sc(0);
 			if(score[0] < -50000000){
 				for(int i=0;i<16;i++){
 					for(int j=0;j<16;j++){
-						if(i==0){           //°¡·ÎÁÙ ¹øÈ£ Ãâ·Â
+						if(i==0){           //ê°€ë¡œì¤„ ë²ˆí˜¸ ì¶œë ¥
 							printf("%X ", k);
 							k++;
 							continue;
 						}
-						if(j==0){           //¼¼·ÎÁÙ ¹øÈ£ Ãâ·Â
+						if(j==0){           //ì„¸ë¡œì¤„ ë²ˆí˜¸ ì¶œë ¥
 							printf("%X ", t);
 							t++;
 							continue;
@@ -791,13 +823,13 @@ void input(){	// ÇÃ·¹ÀÌ
 					}
 					puts("");
 				}				
-				printf("playerÀÇ ½Â¸®ÀÔ´Ï´Ù!");
+				printf("playerì˜ ìŠ¹ë¦¬ì…ë‹ˆë‹¤!");
 				re(); 
 			}
-			for(int i = 1; i <= 120; i++){		//°æ¿ìÀÇ ¼ö Æ®¸®¿¡ ÀúÀå 
+			for(int i = 1; i <= 120; i++){		//ê²½ìš°ì˜ ìˆ˜ íŠ¸ë¦¬ì— ì €ì¥ 
 				copy(0, i);
 				if(x+dx[i] < 0 || x+dx[i] > 15 || y+dy[i] < 0 || y+dy[i] > 15){
-					score[i] = im;	//³ªÁß¿¡ Á¡¼ö °è»ê(¹Ì´Ï¸Æ½º ¾Ë°í¸®Áò)À» »ç¿ëÇÒ¶§ ³í¿Ü·Î »©³õ±â À§ÇÔ
+					score[i] = im;	//ë‚˜ì¤‘ì— ì ìˆ˜ ê³„ì‚°(ë¯¸ë‹ˆë§¥ìŠ¤ ì•Œê³ ë¦¬ì¦˜)ì„ ì‚¬ìš©í• ë•Œ ë…¼ì™¸ë¡œ ë¹¼ë†“ê¸° ìœ„í•¨
 					for(int j = 1; j <= 120; j++){
 						score[i*120+j] = im;
 						for(int k = 1; k <= 120; k++){
@@ -805,8 +837,8 @@ void input(){	// ÇÃ·¹ÀÌ
 						}
 					}
 				}
-				else if(board[i][x + dx[i]][y + dy[i]] != 0){		//ÀÌ¹Ì µ¹ÀÌ ÀÖ´Â °æ¿ì 
-					score[i] = im;	//³ªÁß¿¡ Á¡¼ö °è»ê(¹Ì´Ï¸Æ½º ¾Ë°í¸®Áò)À» »ç¿ëÇÒ¶§ ³í¿Ü·Î »©³õ±â À§ÇÔ
+				else if(board[i][x + dx[i]][y + dy[i]] != 0){		//ì´ë¯¸ ëŒì´ ìˆëŠ” ê²½ìš° 
+					score[i] = im;	//ë‚˜ì¤‘ì— ì ìˆ˜ ê³„ì‚°(ë¯¸ë‹ˆë§¥ìŠ¤ ì•Œê³ ë¦¬ì¦˜)ì„ ì‚¬ìš©í• ë•Œ ë…¼ì™¸ë¡œ ë¹¼ë†“ê¸° ìœ„í•¨
 					for(int j = 1; j <= 120; j++){
 						score[i*120+j] = im;
 						for(int k = 1; k <= 120; k++){
@@ -822,13 +854,13 @@ void input(){	// ÇÃ·¹ÀÌ
 					for(int j = 1; j <= 120; j++){
 						copy(i,120*i+j);
 						if(x+dx[i]+dx[j] < 0 || x+dx[i]+dx[j] > 15 || y+dy[i]+dy[j] < 0 || y+dy[i]+dy[j] > 15){
-							score[i*120+j] = im;	//³ªÁß¿¡ Á¡¼ö °è»ê(¹Ì´Ï¸Æ½º ¾Ë°í¸®Áò)À» »ç¿ëÇÒ¶§ ³í¿Ü·Î »©³õ±â À§ÇÔ
+							score[i*120+j] = im;	//ë‚˜ì¤‘ì— ì ìˆ˜ ê³„ì‚°(ë¯¸ë‹ˆë§¥ìŠ¤ ì•Œê³ ë¦¬ì¦˜)ì„ ì‚¬ìš©í• ë•Œ ë…¼ì™¸ë¡œ ë¹¼ë†“ê¸° ìœ„í•¨
 							for(int k = 1; k <= 120; k++){
 								score[(i*120+j)*120+k] = im;
 							}
 						}
-						else if(board[i*120+j][x+dx[i]+dx[j]][y+dy[i]+dy[j]] != 0){		//ÀÌ¹Ì µ¹ÀÌ ÀÖ´Â °æ¿ì 
-							score[i*120+j] = im;	//³ªÁß¿¡ Á¡¼ö °è»ê(¹Ì´Ï¸Æ½º ¾Ë°í¸®Áò)À» »ç¿ëÇÒ¶§ ³í¿Ü·Î »©³õ±â À§ÇÔ
+						else if(board[i*120+j][x+dx[i]+dx[j]][y+dy[i]+dy[j]] != 0){		//ì´ë¯¸ ëŒì´ ìˆëŠ” ê²½ìš° 
+							score[i*120+j] = im;	//ë‚˜ì¤‘ì— ì ìˆ˜ ê³„ì‚°(ë¯¸ë‹ˆë§¥ìŠ¤ ì•Œê³ ë¦¬ì¦˜)ì„ ì‚¬ìš©í• ë•Œ ë…¼ì™¸ë¡œ ë¹¼ë†“ê¸° ìœ„í•¨
 							for(int k = 1; k <= 120; k++){
 								score[(i*120+j)*120+k] = im;
 							}
@@ -841,10 +873,10 @@ void input(){	// ÇÃ·¹ÀÌ
 							for(int k = 1; k <= 120; k++){
 								copy(i*120+j, (i*120+j)*120+k);
 								if(x+dx[i]+dx[j]+dx[k] > 15 || x+dx[i]+dx[j]+dx[k] < 0 || y+dy[i]+dy[j]+dy[k] > 15 || y+dy[i]+dy[j]+dy[k] < 0){
-									score[(i*120+j)*120+k] = im;	//³ªÁß¿¡ Á¡¼ö °è»ê(¹Ì´Ï¸Æ½º ¾Ë°í¸®Áò)À» »ç¿ëÇÒ¶§ ³í¿Ü·Î »©³õ±â À§ÇÔ
+									score[(i*120+j)*120+k] = im;	//ë‚˜ì¤‘ì— ì ìˆ˜ ê³„ì‚°(ë¯¸ë‹ˆë§¥ìŠ¤ ì•Œê³ ë¦¬ì¦˜)ì„ ì‚¬ìš©í• ë•Œ ë…¼ì™¸ë¡œ ë¹¼ë†“ê¸° ìœ„í•¨
 								}
-								else if(board[(i*120+j)*120+k][x+dx[i]+dx[j]+dx[k]][y+dy[i]+dy[j]+dy[k]] != 0){		//ÀÌ¹Ì µ¹ÀÌ ÀÖ´Â °æ¿ì 
-									score[(i*120+j)*120+k] = im;	//³ªÁß¿¡ Á¡¼ö °è»ê(¹Ì´Ï¸Æ½º ¾Ë°í¸®Áò)À» »ç¿ëÇÒ¶§ ³í¿Ü·Î »©³õ±â À§ÇÔ
+								else if(board[(i*120+j)*120+k][x+dx[i]+dx[j]+dx[k]][y+dy[i]+dy[j]+dy[k]] != 0){		//ì´ë¯¸ ëŒì´ ìˆëŠ” ê²½ìš° 
+									score[(i*120+j)*120+k] = im;	//ë‚˜ì¤‘ì— ì ìˆ˜ ê³„ì‚°(ë¯¸ë‹ˆë§¥ìŠ¤ ì•Œê³ ë¦¬ì¦˜)ì„ ì‚¬ìš©í• ë•Œ ë…¼ì™¸ë¡œ ë¹¼ë†“ê¸° ìœ„í•¨
 								}
 								else{
 									board[(i*120+j)*120+k][x+dx[i]+dx[j]+dx[k]][y+dy[i]+dy[j]+dy[k]] = 2;
@@ -871,12 +903,12 @@ void input(){	// ÇÃ·¹ÀÌ
 		cnt++;
 		for(int i=0;i<16;i++){
 			for(int j=0;j<16;j++){
-				if(i==0){           //°¡·ÎÁÙ ¹øÈ£ Ãâ·Â
+				if(i==0){           //ê°€ë¡œì¤„ ë²ˆí˜¸ ì¶œë ¥
 					printf("%X ", k);
 					k++;
 					continue;
 				}
-				if(j==0){           //¼¼·ÎÁÙ ¹øÈ£ Ãâ·Â
+				if(j==0){           //ì„¸ë¡œì¤„ ë²ˆí˜¸ ì¶œë ¥
 					printf("%X ", t);
 					t++;
 					continue;
@@ -890,8 +922,8 @@ void input(){	// ÇÃ·¹ÀÌ
 		t=1,k=0;
 		cnt ++;
 		if(score[0] > 50000000){
-				printf("AIÀÇ ½Â¸®ÀÔ´Ï´Ù!");
-				cout << "´Ù½Ã ÇÏ½Ã°Ú½À´Ï±î? (Y/N) : ";
+				printf("AIì˜ ìŠ¹ë¦¬ì…ë‹ˆë‹¤!");
+				cout << "ë‹¤ì‹œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Y/N) : ";
 				re(); 
 		}
 	}
@@ -907,4 +939,3 @@ int main(){
 		
 	}
 }
-
