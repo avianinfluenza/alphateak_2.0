@@ -351,7 +351,7 @@ int sc2(int index){		//board[index][x][y]
 	int y = board[index][0][1];		//가장 최근 착수 돌의 y좌표 
 	//현재 board가 플레이어가 가장 최근에 둔 board(플레이어 기준으로 점수 부여) 
 	temp = 0; tf = 0;
-	for(i = 1; i <= 5; i++){		//y++
+	for(i = 0; i <= 4; i++){		//y++
 		if(y+i > 15){
 			break;
 		}
@@ -361,7 +361,7 @@ int sc2(int index){		//board[index][x][y]
 		}
 		else{
 			if(tf == 1){
-				s -= AI[temp]*2;
+				s -= AI[temp]*4;
 				if(temp >= 3){
 					if(board[index][x][y+i] == 2){
 						s += AI[temp]*3;
@@ -377,11 +377,12 @@ int sc2(int index){		//board[index][x][y]
 		}
 	}
 	if(tf == 1){
-		s -= 2*AI[temp];
+		s -= 4*AI[temp];
 		temp = 0; tf = 0;
 	}
 	
-	for(i = 1; i <= 5; i++){		//x++
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//x++
 		if(x+i > 15){
 			break;
 		}
@@ -391,7 +392,7 @@ int sc2(int index){		//board[index][x][y]
 		}
 		else{
 			if(tf == 1){
-				s -= AI[temp]*2;
+				s -= AI[temp]*4;
 				if(temp >= 3){
 					if(board[index][x+i][y] == 2){
 						s += AI[temp]*3;
@@ -407,11 +408,12 @@ int sc2(int index){		//board[index][x][y]
 		}
 	}
 	if(tf == 1){
-		s -= 2*AI[temp];
+		s -= 4*AI[temp];
 		temp = 0; tf = 0;
 	}
 	
-	for(i = 1; i <= 5; i++){		//y--
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//y--
 		if(y-i < 1){
 			break;
 		}
@@ -421,7 +423,7 @@ int sc2(int index){		//board[index][x][y]
 		}
 		else{
 			if(tf == 1){
-				s -= AI[temp]*2;
+				s -= AI[temp]*4;
 				if(temp >= 3){
 					if(board[index][x][y-i] == 2){
 						s += AI[temp]*3;
@@ -437,11 +439,12 @@ int sc2(int index){		//board[index][x][y]
 		}
 	}
 	if(tf == 1){
-		s -= 2*AI[temp];
+		s -= 4*AI[temp];
 		temp = 0; tf = 0;
 	}
 	
-	for(i = 1; i <= 5; i++){		//x--
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//x--
 		if(x-i < 1){
 			break;
 		}
@@ -451,7 +454,7 @@ int sc2(int index){		//board[index][x][y]
 		}
 		else{
 			if(tf == 1){
-				s -= AI[temp]*2;
+				s -= AI[temp]*4;
 				if(temp >= 3){
 					if(board[index][x-i][y] == 2){
 						s += AI[temp]*3;
@@ -467,11 +470,12 @@ int sc2(int index){		//board[index][x][y]
 		}
 	}
 	if(tf == 1){
-		s -= 2*AI[temp];
+		s -= 4*AI[temp];
 		temp = 0; tf = 0;
 	}
 	
-	for(i = 1; i <= 5; i++){		//x++ y++
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//x++ y++
 		if(x+i > 15 || y+i > 15){
 			break;
 		}
@@ -502,7 +506,8 @@ int sc2(int index){		//board[index][x][y]
 		temp = 0; tf = 0;
 	}
 	
-	for(i = 1; i <= 5; i++){		//x-- y--
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//x-- y--
 		if(x-i < 1 || y-i < 1){
 			break;
 		}
@@ -533,7 +538,8 @@ int sc2(int index){		//board[index][x][y]
 		temp = 0; tf = 0;
 	}		
 	
-	for(i = 1; i <= 5; i++){		//x++ y--
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//x++ y--
 		if(x+i > 15 || y-i < 1){
 			break;
 		}
@@ -564,7 +570,8 @@ int sc2(int index){		//board[index][x][y]
 		temp = 0; tf = 0;
 	}
 	
-	for(i = 1; i <= 5; i++){		//x-- y++
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//x-- y++
 		if(x-i < 1 || y+i > 15){
 			break;
 		}
@@ -596,7 +603,7 @@ int sc2(int index){		//board[index][x][y]
 	}		
 		/////////////////////////////////////AI기준 
 	tf = 0; temp = 0;
-	for(i = 1; i <= 5; i++){		//y++
+	for(i = 0; i <= 4; i++){		//y++
 		if(y+i > 15){
 			break;
 		}
@@ -616,7 +623,8 @@ int sc2(int index){		//board[index][x][y]
 		temp = 0; tf = 0;
 	}
 	
-	for(i = 1; i <= 5; i++){		//x++
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//x++
 		if(x+i > 15){
 			break;
 		}
@@ -636,7 +644,8 @@ int sc2(int index){		//board[index][x][y]
 		temp = 0; tf = 0;
 	}
 	
-	for(i = 1; i <= 5; i++){		//y--
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//y--
 		if(y-i < 1){
 			break;
 		}
@@ -656,7 +665,8 @@ int sc2(int index){		//board[index][x][y]
 		temp = 0; tf = 0;
 	}
 	
-	for(i = 1; i <= 5; i++){		//x--
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//x--
 		if(x-i < 1){
 			break;
 		}
@@ -676,7 +686,8 @@ int sc2(int index){		//board[index][x][y]
 		temp = 0; tf = 0;
 	}
 	
-	for(i = 1; i <= 5; i++){		//x++ y++
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//x++ y++
 		if(x+i > 15 || y+i > 15){
 			break;
 		}
@@ -697,7 +708,8 @@ int sc2(int index){		//board[index][x][y]
 		temp = 0; tf = 0;
 	}
 	
-	for(i = 1; i <= 5; i++){		//x-- y--
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//x-- y--
 		if(x-i < 1 || y-i < 1){
 			break;
 		}
@@ -718,7 +730,8 @@ int sc2(int index){		//board[index][x][y]
 		temp = 0; tf = 0;
 	}		
 	
-	for(i = 1; i <= 5; i++){		//x++ y--
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//x++ y--
 		if(x+i > 15 || y-i < 1){
 			break;
 		}
@@ -739,7 +752,8 @@ int sc2(int index){		//board[index][x][y]
 		temp = 0; tf = 0;
 	}
 	
-	for(i = 1; i <= 5; i++){		//x-- y++
+	temp = 0; tf = 0;
+	for(i = 0; i <= 4; i++){		//x-- y++
 		if(x-i < 1 || y+i > 15){
 			break;
 		}
@@ -758,8 +772,23 @@ int sc2(int index){		//board[index][x][y]
 	if(tf == 1){
 		s += AI[temp];
 		temp = 0; tf = 0;
-	}		
+	}
+	
+	
+	if(board[index][x][y] == 1){
+		for(j = 0; j < 3; j++){
+			for(i = 1+44+4+11*j; i <= 1+44+4+3+11*j; i++){
+				if(x+dx[i] < 0 || x+dx[i] > 15 || y+dy[i] < 0 || y+dy[i] > 15){
+					continue;
+				}
+				if(board[index][x+dx[i]][y+dy[i]] == 2){
+					s += 2;
+				}
+			}
+		}
+	}
 	return s;
+	
 }
 
 
