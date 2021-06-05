@@ -39,6 +39,7 @@ int tree(void){
 	}
 	s = im -1;
 	for(i = 1; i <= 120; i++){
+		printf("s[%d] : %d", i, score[i]);
 		if(score[i] >= s){
 			temp = i;
 			s = score[i];
@@ -542,7 +543,7 @@ int scme(int index){
 		if(y+i < 1 || y+i > 15){
 			continue;	
 		}
-		if(board[index][x][y+i] == 1){
+		if(board[index][x][y+i] == 2){
 			tf = 1;
 			temp++;
 		}
@@ -616,7 +617,7 @@ int scme(int index){
 		if(y+i < 1 || y+i > 15 || x-i < 1 || x-i > 15){
 			continue;	
 		}
-		if(board[index][x-i][y+i] == 1){
+		if(board[index][x-i][y+i] == 2){
 			tf = 1;
 			temp++;
 		}
@@ -625,10 +626,10 @@ int scme(int index){
 			temp = 0;
 			s += AI[temp]*2;
 			if(temp >= 3){
-				if(y+i-temp-1 >= 1 && x-i+temp+1 >= 1 && board[index][x-i+temp+1][y+i-temp-1] == 2){
+				if(y+i-temp-1 >= 1 && x-i+temp+1 >= 1 && board[index][x-i+temp+1][y+i-temp-1] == 1){
 					s -= AI[temp]*3;
 				}
-				if(board[index][x-i][y+i] == 2){
+				if(board[index][x-i][y+i] == 1){
 					s -= AI[temp]*3;
 				}
 			}
@@ -639,10 +640,10 @@ int scme(int index){
 		temp = 0;
 		s += AI[temp]*2;
 		if(temp >= 3){
-			if(y+i-temp-1 >= 1 && x-i+temp+1 >= 1 && board[index][x-i+temp+1][y+i-temp-1] == 2){
+			if(y+i-temp-1 >= 1 && x-i+temp+1 >= 1 && board[index][x-i+temp+1][y+i-temp-1] == 1){
 				s -= AI[temp]*3;
 			}
-			if(y+i <= 15 && x-i >= 1 && board[index][x-i][y+i] == 2){
+			if(y+i <= 15 && x-i >= 1 && board[index][x-i][y+i] == 1){
 				s -= AI[temp]*3;
 			}
 		}
@@ -679,7 +680,7 @@ void xy(int x, int y){	// x,y 좌표설정
 }
 void init(){  //크기및 커서 숨기는 설정 
 	system("title OMOK BOT");
-	system("mode con cols=53 lines=15"); 
+	system("mode con cols=200 lines=30"); 
 	HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_CURSOR_INFO ConsoleCursor;
 	ConsoleCursor.bVisible = 0;
@@ -901,6 +902,7 @@ void input(){	// 플레이
 		board[0][x+dx[temp]][y+dy[temp]] = 2;
 		score[0] = sc(0);
 		cnt++;
+		printf("temp : %d\n", temp);
 		for(int i=0;i<16;i++){
 			for(int j=0;j<16;j++){
 				if(i==0){           //가로줄 번호 출력
